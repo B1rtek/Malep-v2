@@ -7,12 +7,19 @@
 using namespace std;
 using namespace sf;
 
+#ifdef _WIN32
+string command = "dir /A-D /B > temp.txt";
+#endif
+#ifdef linux
+string command = "ls -A1 > temp.txt";
+#endif
+
 vector<string> generateFileList() {
     set<string> goodExtensions = {
             "bmp", "png", "tga", "jpg", "gif", "psd", "hdr", "pic"
     };
 
-    system("dir /A-D /B > temp.txt");
+    system(command.c_str());
     fstream list;
     list.open("temp.txt");
     string line;

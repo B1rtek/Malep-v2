@@ -4,6 +4,7 @@ project(Malep_v2)
 set(CMAKE_CXX_STANDARD 14)
 
 set(CMAKE_PREFIX_PATH "C:\\Users\\skrze\\Documents\\SFML-2.5.1;D:\\Kody\\ExtLibs\\SFML\\SFML-2.5.1")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/Modules)
 
 find_package(SFML 2 COMPONENTS system window graphics audio REQUIRED)
 include_directories(${SFML_INCLUDE_DIR})
