@@ -3,10 +3,21 @@ project(Malep_v2)
 
 set(CMAKE_CXX_STANDARD 14)
 
-set(CMAKE_PREFIX_PATH "C:\\Users\\skrze\\Documents\\SFML-2.5.1;D:\\Kody\\ExtLibs\\SFML\\SFML-2.5.1")
+include(FetchContent)
 
-find_package(SFML 2 COMPONENTS system window graphics audio REQUIRED)
-include_directories(${SFML_INCLUDE_DIR})
+set(SFML_VERSION "2.5.1")
+
+FetchContent_Declare(
+        sfml
+        GIT_REPOSITORY "https://github.com/SFML/SFML.git"
+        GIT_TAG        "${SFML_VERSION}"
+)
+
+FetchContent_GetProperties(sfml)
+if(NOT sfml_POPULATED)
+    FetchContent_Populate(sfml)
+    add_subdirectory(${sfml_SOURCE_DIR} ${sfml_BINARY_DIR})
+endif()
 
 add_executable(${PROJECT_NAME} main.cpp)
-target_link_libraries(${PROJECT_NAME} ${SFML_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} sfml-graphics sfml-system sfml-window)
