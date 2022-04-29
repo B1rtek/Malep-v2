@@ -57,7 +57,7 @@ Yeah... Have fun :)
 
 ## Compiling
 
-This program requires CMake to compile, the version of CMake doesn't really matter so if you have an outdated version you can change it to 3.04 or sth in the CMakeLists.txt. You'll also need SFML, which you can download from [here](https://www.sfml-dev.org/download.php), or from your Linux distro's package manager. You'll need to set the `CMAKE_PREFIX_PATH` to point to your SFML directory as well if you're on Windows. From that point it's just
+This program requires CMake to compile, the version of CMake doesn't really matter so if you have an outdated version you can change it to 3.04 or sth in the CMakeLists.txt. Since dependencies are handled by FetchContent, you don't have to do anything, just:
 ```shell
 $ mkdir build
 $ cd build
