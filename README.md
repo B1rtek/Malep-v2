@@ -57,7 +57,7 @@ Yeah... Have fun :)
 
 ## Compiling
 
-This program requires CMake to compile, the version of CMake doesn't really matter so if you have an outdated version you can change it to 3.04 or sth in the CMakeLists.txt. Since dependencies are handled by FetchContent, you don't have to do anything, just:
+This program requires CMake to compile, the version of CMake doesn't really matter so if you have an outdated version you can change it to 3.11 or higher in the CMakeLists.txt. Since dependencies are handled by FetchContent, you don't have to do anything, just:
 ```shell
 $ mkdir build
 $ cd build
